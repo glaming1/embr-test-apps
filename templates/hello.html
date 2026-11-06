@@ -1,21 +1,23 @@
-<!doctype html>
-<head>
-    <title>Hello Azure - Python Quickstart</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-</head>
-<html>
-   <body>
-     <main>
-        <div class="px-4 py-3 my-2 text-center">
-            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/azure-icon.svg') }}" alt="Azure Logo" width="192" height="192"/>
-            <!-- <img  src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-            <h1 class="display-6 fw-bold">Hello {{name}}</h1>
-            <p class="fs-5">
-                It is nice to meet you!
-            </p>
-            <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg px-4 gap-3">Back home</a>
-          </div>
-     </main>      
-   </body>
-</html>
+{% extends "base.html" %}
+{% block title %}Hello, {{ name }} — Hello Studio{% endblock %}
+{% block content %}
+<section class="result-section" aria-labelledby="result-title">
+  <div class="result-intro">
+    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> WELL, LOOK WHO'S HERE.</p>
+    <h1 id="result-title">The world needs<br>more <span class="serif-word">hellos.</span></h1>
+    <p class="hero-description">And this one's just for you.</p>
+  </div>
+  <div class="result-card">
+    <div class="result-card-top"><span>A LITTLE NOTE FOR YOU</span><span aria-hidden="true">✳</span></div>
+    <p class="result-hello">Hello,</p>
+    <h2 class="result-name">{{ name }}<span>.</span></h2>
+    <div class="result-message">
+      <span class="result-flower" aria-hidden="true">✳</span>
+      <p>It is nice to meet you!<br><span>Glad you stopped by our little corner of the internet.</span></p>
+    </div>
+    <div class="result-card-bottom"><span>A SMALL GESTURE, A BRIGHT BEGINNING.</span><span aria-hidden="true">↗</span></div>
+  </div>
+  <a class="primary-button result-back" href="{{ url_for('index') }}#create">Make another hello <span aria-hidden="true">↗</span></a>
+  <p class="result-footnote">Good connections always start somewhere.</p>
+</section>
+{% endblock %}

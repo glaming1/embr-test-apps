@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ed">
+    <meta name="description" content="A small hello. A bright beginning. Make your own greeting with the Hello Studio.">
+    <title>{% block title %}Hello Studio — A little more human{% endblock %}</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='studio.css') }}">
+    <script src="{{ url_for('static', filename='studio.js') }}" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="wordmark" href="{{ url_for('index') }}" aria-label="Hello Studio home">
+          <span class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M8 9v14M24 9v14M8 16h16" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="16" cy="7" r="2" fill="currentColor"/>
+            </svg>
+          </span>
+          hello<span class="wordmark-light">studio</span><span class="brand-period">.</span>
+        </a>
+        <nav class="header-nav" aria-label="Main navigation">
+          <a class="about-link" href="{{ url_for('index') }}#the-idea">The idea</a>
+          <a class="nav-cta" href="{{ url_for('index') }}#create">Make a hello <span aria-hidden="true">↗</span></a>
+        </nav>
+      </header>
+      <main id="main">
+        {% block content %}{% endblock %}
+      </main>
+      <footer class="site-footer">
+        <span>A tiny app. A warmer internet.</span>
+        <span class="footer-credit"><span class="tiny-spark" aria-hidden="true">✳</span> Made with Python. Hosted on Azure.</span>
+        <a href="{{ url_for('index') }}">Back to the beginning <span aria-hidden="true">↗</span></a>
+      </footer>
+    </div>
+  </body>
+</html>

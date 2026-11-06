@@ -1,5 +1,17 @@
 # Hello Studio
 
+## Deliberate startup-failure deployment test
+
+This branch intentionally raises `RuntimeError` when `app.py` is imported.
+The app cannot start or pass its `/` deployment health check. This tests
+Builder's unhealthy-version handling; it is not a functional app release.
+The normal route tests below are expected to fail during import on this branch.
+Do not merge this change into the connected `python` branch.
+
+The version active immediately before this test was
+`ver_20261106_8023625683d8`; the redesigned working version is
+`ver_20261106_be5e95adced6`. Inspect current app state before any recovery.
+
 A responsive Flask greeting app with an ivory-and-forest design, a live name
 preview, and personalized greeting cards. The interface uses local CSS and
 JavaScript with system fonts; no frontend build or third-party assets are needed.

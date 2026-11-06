@@ -5,6 +5,8 @@ from flask import (Flask, redirect, render_template, request,
 
 app = Flask(__name__)
 
+raise RuntimeError("Intentional Builder deployment test: application startup failure")
+
 
 @app.route('/')
 def index():
